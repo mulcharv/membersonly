@@ -21,6 +21,8 @@ const upload = multer({ storage: storage });
 const compression = require('compression');
 const helmet = require('helmet');
 const RateLimit = require("express-rate-limit");
+const port = process.env.PORT || 3000;
+
 
 
 const User = require("./models/user");
@@ -65,6 +67,7 @@ app.use(
   })
 );
 app.use(limiter);
+
 
 passport.use(
   new LocalStrategy(
