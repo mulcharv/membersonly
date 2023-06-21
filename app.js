@@ -12,7 +12,7 @@ const bcrypt = require("bcryptjs");
 mongoose.set("strictQuery", false);
 require('dotenv').config()
 const dev_db_url = process.env.MONGOURL;
-const mongoDB = dev_db_url;
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 const asyncHandler = require("express-async-handler");
 const { body, validationResult, customSanitizer } = require("express-validator"); 
 const multer = require('multer');
