@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div(class='nav-container')
+      div(class='site-title') 
+        a(href='/') Message Board 
+      div(class='nav-links-cont')
+        if storeduser 
+          div(class='hellomember') Hello #{storeduser.first_name} #{storeduser.last_name}
+        if storeduser
+          if !storeduser.membership_status
+            div(class='membership-link') 
+              a(href='/membership') Membership
+        if !storeduser
+          div(class='signup-link')
+            a(href='/signup') Signup
+        if !storeduser
+          div(class='login-link')
+            a(href='/login') Login
+        if storeduser
+          div(class='logout-link')
+            a(href='/logout') Logout
+    block content

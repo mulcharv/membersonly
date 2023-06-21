@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+
+    div(class='login-container')
+
+        if (storeduser)
+            div(class='login-message') You are already logged in 
+
+        if (!storeduser) 
+            div(class='login-message') Login to your account
+
+            form(class='login_form' method='POST', action='')
+                div.form-group
+                    label(for='username') Username: 
+                    input#loginusername.form-control(type='text', placeholder='Username' name='username' required='true')
+                div.form-group
+                    label(for='password') Password: 
+                    input#loginpassword.form-control(type='text', placeholder='Password' name='password' required='true')
+                button.btn.btn-primary(type='submit') Submit 
+
+
+        

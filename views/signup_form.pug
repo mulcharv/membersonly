@@ -1,0 +1,46 @@
+extends layout 
+
+block content 
+
+    div(class='signup-container')
+
+        if storeduser
+            div(class='signup-message') You are already logged in 
+
+        if !storeduser
+            div(class='signup-message') Signup to create a user account
+
+
+            form(class='signup_form' method='POST' action='' enctype='multipart/form-data')
+                div.form-group 
+                    label(for='firstname') First Name: 
+                    input#firstname.form-control(type='text', placeholder='First Name' name='firstname' required='true' value=(undefined===user ? '' : user.first_name))
+                div.form-group
+                    label(for='lastname') Last Name: 
+                    input#lastname.form-control(type='text', placeholder='Last Name' name='lastname' required='true' value=(undefined===user ? '' : user.last_name))
+                div.form-group 
+                    label(for='username') Username: 
+                    input#email.form-control(type='text', placeholder='Username' name='username' required='true' value=(undefined===user ? '' : user.username))
+                div.form-group 
+                    label(for='password') Password: 
+                    input#password.form-control(type='text', placeholder='Password' name='password' required='true' value=(undefined===user ? '' : user.password))
+                div.form-group 
+                    label(for='passwordConfirmation') Confirm Password: 
+                    input#passwordconfirm.form-control(type='text', placeholder='Password Confirm' name='passwordConfirmation' required='true')
+                div.form-group 
+                    label(for='profile_image') Profile Image: 
+                    input#profileimage.form-control(type='file', name='profile_image' accept='image/png, image/jpeg, image/jpg') 
+                div.form-group 
+                    label(for='adminstatus') Is Admin?: 
+                    input#admincode.form-control(type='checkbox', name='adminstatus')
+                button.btn.btn-primary(type='submit') Submit 
+
+
+            if errors 
+                ul 
+                    for error in errors 
+                        li!= error.msg 
+
+
+
+

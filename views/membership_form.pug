@@ -1,0 +1,24 @@
+extends layout 
+
+block content
+
+    div(class='membershippage')
+
+        if !storeduser 
+            div(class='membershipmsg') Only those logged in can become a member. 
+
+        if storeduser 
+            if storeduser.membership_status 
+                div(class='membershipmsg') You are already a member.
+
+            if !storeduser.membership_status 
+                div(class='membershipmsg') To become a member, answer the following below: what is the capital of England?
+
+                form(class='membership_form' method='POST', action='')
+                    div.form-group 
+                        label(for='membershipcode') 
+                        input#membershipcode.form-control(type='text', placeholder='Membership Code', name='membershipcode', required='true') 
+                    button.btn.btn-primary(type='submit') Submit
+        
+                if errmessage 
+                    div(class='membererr') #{errmessage}

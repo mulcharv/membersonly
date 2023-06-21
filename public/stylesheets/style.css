@@ -1,0 +1,179 @@
+@font-face {
+  font-family: mainFont;
+  src: url(../fonts/Arvo-Regular.ttf)
+}
+
+body {
+  font: 14px "mainFont", Helvetica, Arial, sans-serif;
+  background-color: #FFEECF;
+  margin: 0;
+}
+
+a {
+  color: #2B59C3;
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.messages_container {
+  display: grid;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.message_img {
+  width: 7vw;
+  height: 7vw;
+  border-radius: 1vw;
+}
+
+.message {
+  display: grid;
+  width: 30vw;
+  padding: 3vw;
+  border-radius: 1vw;
+  background-color: #253c78;
+  color: #FFF;
+}
+
+.message_info {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1vw;
+  justify-content: start;
+  color: #D36582;
+}
+
+.message_info_text {
+  display: grid;
+  align-content: start;
+  gap: 1vw;
+}
+
+.message_text {
+  margin-top: 1vw;
+  margin-left: 1vw;
+}
+
+.homedeletemsg {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+.delete_btn {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+.delete_btn_img {
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+.nav-container {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  padding: 2vw;
+  background-color: #D36582;
+  margin-bottom: 2vw;
+}
+
+.site-title {
+  font-weight: 900;
+  font-size: 2.2vw;
+}
+
+.hellomember {
+  margin-right: 2vw;
+}
+
+.nav-links-cont {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1.5vw;
+}
+
+.homecreatemsg {
+  display: grid;
+  justify-content: center;
+  margin-bottom: 2vw;
+}
+
+.homemsg {
+  display: grid;
+  justify-content: center;
+  margin-bottom: 2vw;
+}
+
+.signup-container {
+  display: grid;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.signup-message {
+  font-size: 1.5vw;
+}
+
+.signup_form {
+  display: grid;
+  gap: 1vw;
+}
+
+.btn-primary {
+  width: 8vw;
+  justify-self: center;
+}
+
+.login-message {
+  font-size: 1.5vw;
+}
+
+.login-container {
+  display: grid;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.login_form {
+  display: grid;
+  gap: 1vw;
+}
+
+.messageform-title {
+  display: grid;
+  justify-content: center;
+  font-size: 1.5vw;
+  margin-bottom: 2vw;
+}
+
+.message_form {
+  display: grid;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.messageinp {
+  width: 15vw;
+  height: 3vw;
+}
+
+.membershippage {
+  display: grid;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.membershipmsg {
+  font-size: 1.5vw ;
+}
+
+.membership_form {
+  display: grid;
+  justify-content: center;
+  gap: 1vw;
+}

@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  if !storeduser 
+    div(class='homemsg') You must be logged in to see all information about messages
+
+  if storeduser 
+    if storeduser.membership_status
+      div(class='homecreatemsg')
+        a(href='/message') Create Message
+
+      if !storeduser.admin_status 
+        div(class='homedeletemsg') Only logged in members who have admin status can delete messages.
+    
+    
+  div(class='messages_container')
+    each message in messages
+      div(class='message')
+        div(class='message_info')
+          div(class='message_img_cont')
+            img(class='message_img' src= ('data:image/jpeg;base64,' + message.author.profile_image.toString('base64')), alt='') 
+          if storeduser        
+            div(class='message_info_text')       
+              div(class='message_author') #{message.author.username}
+              div(class='message_date') #{message.timestamp_formatted}
+              if storeduser.admin_status
+                if storeduser.membership_status
+                  form(method='POST', action='/delete')
+                    div.form-group
+                      input#artistid.form-control(type='hidden', name='messageid', required='true', value=message._id)
+                      button(class='delete_btn' type='submit') 
+                        img(class='delete_btn_img' src='/images/delete.svg' alt='')
+          if !storeduser 
+            div(class='message_info_text')       
+              div(class='message_author') Author Hidden
+              div(class='message_date') Date Hidden
+        div(class='message_text') #{message.message_text}
+            
+          
+            
+            
+          
+            
+            
+             
+              
