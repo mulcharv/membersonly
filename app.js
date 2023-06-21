@@ -34,9 +34,11 @@ const limiter = RateLimit({
 })
 
 
-mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "mongo connection error"));
+mongoose.set("strictQuery", false);
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
 
 
 
