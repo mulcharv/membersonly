@@ -2,7 +2,7 @@
   "name": "express-membersonly",
   "version": "0.0.0",
   "engines": {
-    "node": ">=v18.16.0"
+    "node": ">=18.16.0"
   },
   "private": true,
   "scripts": {
@@ -33,6 +33,7 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.2.15",
     "nodemon": "^2.0.22"
   }
 }
