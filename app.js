@@ -262,7 +262,7 @@ app.get("/membership", asyncHandler(async(req, res, next) => {
 }))
 
 app.post("/membership", asyncHandler(async(req, res, next) => {
-  if (req.body.membershipcode.toLowerCase() === process.env.MEMBERSHIP_KEY) {
+  if (req.body.membershipcode.toLowerCase() === 'london') {
     const user = await User.findByIdAndUpdate(req.user._id, { membership_status: true }).exec();
 
     res.redirect('/')

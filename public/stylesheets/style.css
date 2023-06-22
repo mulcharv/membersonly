@@ -177,3 +177,8 @@ button:hover {
   justify-content: center;
   gap: 1vw;
 }
+
+.homedeletemsg {
+  display: grid;
+  justify-content: center;
+}
